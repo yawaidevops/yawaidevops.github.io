@@ -1,0 +1,240 @@
+#name_container {
+    transform: perspective(1000px);
+}
+
+#name_word {
+    transform: rotateX(45deg);
+    animation: shake 0.45s cubic-bezier(.36, .07, .19, .97) both 0.75s;
+}
+#name_word:hover {
+    animation: shake 0.45s cubic-bezier(.36, .07, .19, .97) both infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+#name_word::selection {
+    cursor: none;
+}
+
+#name_word:hover::before {
+    animation: spanName 0.3s cubic-bezier(.41, .06, .41, .51) forwards;
+}
+
+@keyframes spanName {
+    0% {
+        transform: perspective(1000px) rotateZ(45deg) translate3d(0, -800px, 600px);
+    }
+
+    30% {
+        transform: perspective(1000px) rotateZ(30deg) translate3d(0, -150px, 400px);
+    }
+
+    65% {
+        transform: perspective(1000px) rotateZ(15deg) translate3d(0, -100px, 450px);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateZ(0) translate3d(0, 0, 0);
+    }
+}
+#name_word::before {
+    content: attr(data-text);
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: perspective(1000px) rotateZ(45deg) translate3d(0, -1000px, 600px);
+    animation: spanNameOut 0.45s ease-in-out forwards;
+    }
+    
+    @keyframes spanNameOut {
+        0% {
+            transform: perspective(1000px) rotateZ(0) translate3d(0, 0, 0);
+        }
+    
+        30% {
+            transform: perspective(1000px) rotateZ(-35deg) translate3d(0, -150px, 400px);
+        }
+    
+        30% {
+            transform: perspective(1000px) rotateZ(0) translate3d(0, -150px, 400px);
+        }
+    
+        65% {
+            transform: perspective(1000px) rotateZ(35deg) translate3d(0, -180px, 450px);
+        }
+    
+        100% {
+            transform: perspective(1000px) rotateZ(45deg) translate3d(0, -600px, 600px);
+        }
+}
+
+#name_word[data-color='#F76E11']::before {
+    color: #F76E11;
+}
+
+#name_word[data-color='#6F38C5']::before {
+    color: #6F38C5;
+}
+
+#name_word[data-color='#FFB200']::before {
+    color: #FFB200;
+}
+
+#name_word[data-color='#1CD6CE']::before {
+    color: #1CD6CE;
+}
+
+#name_word[data-color='#B33030']::before {
+    color: #B33030;
+}
+
+#name_word[data-color='#E60965']::before {
+    color: #E60965;
+}
+
+@keyframes shake {
+0%,
+    100% {
+        transform: perspective(1000px) rotateZ(0deg) translate3d(0, 0, 0);
+    }
+
+ 25% {
+     transform: perspective(1000px) rotateZ(0) translate3d(-2px, 0, 40px);
+ }
+
+  50% {
+      transform: perspective(1000px) rotateZ(0) translate3d(2px, 0, -40px);
+  }
+
+  70% {
+transform: perspective(1000px) rotateZ(0) translate3d(-2px, 0, 40px);
+}
+
+90% {
+    transform: perspective(1000px) rotateZ(0) translate3d(2px, 0, -40px);
+    }
+
+}
+
+
+#code-sign>path {
+    animation: codeAni 3s linear infinite;
+}
+
+@keyframes codeAni {
+    0% {
+        fill: red;
+    }
+
+    25% {
+        fill: rgb(255, 0, 183);
+    }
+
+    50% {
+        fill: rgb(255, 1, 187);
+    }
+
+    75% {
+        fill: yellow;
+    }
+
+    100% {
+        fill: rgb(43, 255, 0);
+    }
+}
+
+#big-line1,
+#big-line2,
+#big-line3,
+#big-line4,
+#small-line1,
+#small-line2,
+#small-line3,
+#small-line4,
+#small-line5,
+#small-line6,
+#small-line7,
+#small-line8 {
+    animation: proAni 1s linear infinite;
+}
+
+#big-line2 {
+    animation-delay: 0.25s;
+}
+
+#big-line3 {
+    animation-delay: 0.5s;
+}
+
+#big-line4 {
+    animation-delay: 0.75s;
+}
+
+#small-line2 {
+    animation-delay: 0.1s;
+}
+
+#small-line3 {
+    animation-delay: 0.2s;
+}
+
+#small-line4 {
+    animation-delay: 0.3s;
+}
+
+#small-line5 {
+    animation-delay: 0.4s;
+}
+
+#small-line6 {
+    animation-delay: 0.5s;
+}
+
+#small-line6 {
+    animation-delay: 0.7s;
+}
+
+#small-line8 {
+    animation-delay: 0.8s;
+}
+
+
+@keyframes proAni {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+}
+
+#red-dot,
+#green-dot,
+#blue-dot {
+    width: 2px;
+    height: 2px;
+    animation: dotAni 1s linear infinite;
+}
+
+#green-dot {
+    animation-delay: 0.3s;
+}
+
+#blue-dot {
+    animation-delay: 0.6s;
+}
+
+@keyframes dotAni {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
